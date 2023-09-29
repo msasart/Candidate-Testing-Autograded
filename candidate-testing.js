@@ -57,12 +57,15 @@ console.log(`-------------------------TEST RESULTS---------------------------`)
   }
   // ]
 grade = (numberOfCorrectAnswers / questions.length * 100);
+incorrectAnswers = (questions.length - numberOfCorrectAnswers);
+
+
   if (grade >= 80) { 
-  console.log (`Congratulations ${candidateName}! You passed the test with a score of ${grade}%.`)
+  console.log (`Congratulations ${candidateName}! You passed the test with a score of ${grade}%. You got ${numberOfCorrectAnswers} out of ${questions.length} correct answers.`)
   
 
 } else if (grade < 80){
-  console.log (`Better luck next time, ${candidateName}. You scored ${grade}, which is not a passing score.`)
+  console.log (`Better luck next time, ${candidateName}. You got ${incorrectAnswers} out of ${questions.length} incorrect answers with a total score of ${grade}%, which is not a passing score.`)
 }
   return grade;
 }
